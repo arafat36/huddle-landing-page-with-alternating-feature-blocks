@@ -1,0 +1,120 @@
+//////////////////////
+// || HEADER COMPONENTS
+.header {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3.5rem;
+    }
+
+    &__logo-box {
+        flex: 0 0 22rem;
+        padding: 1rem 0; 
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__text-box {
+        flex: 0 0 43.2%;
+    }
+
+    
+    &__illustration-box {
+        flex: 0 0 54%;
+    }
+
+}
+
+
+//////////////////////
+// || FEATURE
+.feature {
+    display: flex;
+    box-shadow: 0 0 1rem rgba(172, 172, 172, 0.1);
+    border-radius: 1.4rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 3rem;
+    padding-left: 11rem;
+    margin: 4rem 0;
+    border: 1px solid #eee;
+
+    &__text-box {
+        flex: 0 0 52%;
+    }
+
+    &__illustration-box {
+        flex: 0 0 35%;
+    }
+
+}
+
+
+//////////////////////
+// BUTTONS
+.btn,
+.btn:link,
+.btn:visited {
+    text-decoration: none;
+    color: $color-neutral-2;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 30rem;
+    transition: all .2s;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 2rem 8rem;
+
+    &.header__btn-top {
+        box-shadow: 0 2px .5rem #00000020;
+        padding: 1.3rem 5rem;
+    font-size: 1.6rem;
+
+
+    }
+
+    &.header__btn-main {
+        background-color: $color-primary;
+        color: #fff;
+    }
+}
+
+//////////////////////
+// HEADINGS
+.heading {
+    &-primary {
+        font-size: 4.2rem;
+        font-weight: 600;
+    }
+    &-secondary {}
+    &-tertiary {
+        font-size: 3.3rem;
+
+    }
+}
+
+//////////////////////
+// PARAGRAPHS
+.paragraph {
+    &-primary {
+        font-size: 1.95rem; 
+    }
+    &-secondary {
+
+    }
+    &-tertiary {
+        font-size: 2rem;
+        color: $color-neutral-3;
+    }
+}
+
+//////////////////////
+// IMAGE, SVG
+.illustration, .logo {
+    width: 100%;
+}
