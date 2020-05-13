@@ -1,31 +1,63 @@
 //////////////////////
-// || HEADER COMPONENTS
+// || HEADER
 .header {
     &__top {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 3.5rem;
+
+        @include respond-to(mobile-sm) {
+            margin-bottom: 1rem;
+        }
     }
 
     &__logo-box {
         flex: 0 0 22rem;
-        padding: 1rem 0; 
+        // padding: 1rem 0; 
+
+        @include respond-to(laptop) {
+            flex: 0 1 19rem;
+        }
+
+        @include respond-to(mobile-l) {
+            flex: 0 1 16rem;
+        }
+
+        @include respond-to(mobile-sm) {
+            flex-grow: 1;
+            max-width: 20rem;
+            margin: 0 auto;
+        }
+
     }
 
     &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include respond-to(tab-port) {
+            flex-direction: column;
+            text-align: center;
+        }
     }
 
     &__text-box {
         flex: 0 0 43.2%;
+
+        @include respond-to(tab-port) {
+            max-width: 65rem;
+            margin: 3rem 0 5rem;
+        }
     }
 
     
     &__illustration-box {
         flex: 0 0 54%;
+        @include respond-to(tab-port) {
+            max-width: 56rem;
+        }
     }
 
 }
@@ -34,26 +66,198 @@
 //////////////////////
 // || FEATURE
 .feature {
+    background-color: #fff;
     display: flex;
     box-shadow: 0 0 1rem rgba(172, 172, 172, 0.1);
     border-radius: 1.4rem;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem 3rem;
-    padding-left: 11rem;
+    padding: 4.5rem 3rem;
+    // padding-left: 11rem;
+    padding-left: 10%;
+
     margin: 4rem 0;
     border: 1px solid #eee;
 
+    @include respond-to(mobile-l) {
+        flex-direction: column;
+    }
+
     &__text-box {
         flex: 0 0 52%;
+        @include respond-to(mobile-l) {
+            flex: 100%;
+            order: 1;
+            text-align: center;
+        }
     }
 
     &__illustration-box {
         flex: 0 0 35%;
+        @include respond-to(mobile-l) {
+            flex: 100%;
+            max-width: 23rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &.cta {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        max-width: 85rem;
+        margin: 0 auto;
+        padding: 6rem 10%;
+
+        position: relative;
+        bottom: -12rem;
+
+        @include respond-to(mobile-l) {
+            bottom: -7rem;
+        }
+
+        @include respond-to(mobile-sm) {
+            bottom: -5rem;
+            padding: 3rem 10%;
+        }
     }
 
 }
 
+
+//////////////////////
+// || FOOTER 
+.footer {
+    font-size: 1.6rem;
+
+    &__logo-box {
+        // flex: 0 0 100%;
+        width: 23rem; 
+        // margin-right: auto;
+    }
+
+    &__middle-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex: 0 0 100%;
+        flex-wrap: wrap;
+    }
+
+    .contact {
+        flex: 0 0 38rem;
+        display: flex;
+        flex-direction: column;
+        height: 17rem;
+        justify-content: space-between;
+        margin-right: 10%;
+        margin-bottom: 11%;
+
+        @include respond-to(mobile-l) {
+            flex: 1 1 38rem;
+        }
+
+        &__location,
+        &__phone,
+        &__email {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        &__icon {
+            padding-top: 4px;
+            flex: 0 0 4rem;
+        }
+
+        &__text,
+        &__text:link,
+        &__text:visited  {
+            color: currentColor;
+            font-size: 1.6rem;
+            // line-height: 2;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__nav {
+        flex: 1 0 28rem;
+        padding-bottom: 13%;
+        @include respond-to(tab-port) {
+            flex: 0 0 30rem;
+        }
+
+        &-items {
+            display: flex;
+            height: 10rem;
+            flex-flow: column wrap;
+            // align-content: space-around;
+            justify-content: space-between;
+        }
+
+        &-item {
+            // display: inline-block;
+            // width: 15rem;
+            padding: .5rem;
+            // height: 3rem;
+        }
+
+        &-link:link,
+        &-link:visited {
+            color: currentColor;
+            text-decoration: none;
+            // color:  $color-neutral-1;
+        }
+    }
+
+    .social-media {
+        flex: 1 0 20rem;
+        display: flex;
+        justify-content: center;
+
+        @include respond-to(tab-port) {
+            flex-basis: 100%;
+        }
+
+        &__icon:link,
+        &__icon:visited {
+            color: currentColor;
+            font-size: 1.5rem;
+            border: 1px solid #fff;
+            line-height: 2.9rem;
+            text-align: center;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            margin: 0 .6rem;
+        }
+    }
+
+    &__bottom-wrapper {
+        margin-left: auto;
+        font-size: 1.3rem;
+        line-height: 2;
+        @include respond-to(tab-land) {
+                margin: 0 auto;
+        }
+        @include respond-to(mobile-sm) { 
+            font-size: 1rem;
+        }
+    }
+
+
+    &__copyright,
+    &__attribution {
+        @include respond-to(tab-land) {
+            text-align: center;
+        }
+    }
+
+    &__attribution-link {
+        text-transform: uppercase; 
+        color: #3e75a3;
+    }
+
+}
 
 //////////////////////
 // BUTTONS
@@ -65,22 +269,44 @@
     display: inline-block;
     background-color: #fff;
     border-radius: 30rem;
-    transition: all .2s;
+    // transition: all .2s;
     font-weight: 700;
     font-size: 1.4rem;
     padding: 2rem 8rem;
 
-    &.header__btn-top {
+    &.white {
         box-shadow: 0 2px .5rem #00000020;
         padding: 1.3rem 5rem;
-    font-size: 1.6rem;
+        font-size: 1.6rem;
 
-
+        @include respond-to(mobile-l) {
+            padding: 1rem 4rem;
+            font-size: 1.4rem;
+        }
+        @include respond-to(mobile-sm) {
+            display: none; 
+        }
     }
 
-    &.header__btn-main {
-        background-color: $color-primary;
+    &.primary {
+        background-color: $color-primary; 
         color: #fff;
+    }
+
+    &.large  {
+        padding: 3rem 12rem;
+        font-size: 2rem;
+        box-shadow: 0 .6rem 1rem #00000033;
+
+        @include respond-to(tab-port) {
+            padding: 3rem 9rem;
+            font-size: 1.7rem;
+        }
+
+        @include respond-to(mobile-l) {
+            padding: 2rem 7rem;
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -90,10 +316,42 @@
     &-primary {
         font-size: 4.2rem;
         font-weight: 600;
+        @include respond-to(laptop) {
+            font-size: 3.6rem;
+        }
+
+        @include respond-to(tab-port) {
+            font-size: 4.3rem;
+        }
+
+        @include respond-to(mobile-sm) {
+            font-size: 3.6rem;
+        }
     }
-    &-secondary {}
+    &-secondary {
+        font-size: 3.7rem;
+        @include respond-to(laptop) {
+            font-size: 3.4rem;
+        }
+
+        @include respond-to(tab-port) {
+            font-size: 3.2rem;
+        }
+
+    }
     &-tertiary {
         font-size: 3.3rem;
+        @include respond-to(laptop) {
+            font-size: 2.6rem; 
+        }
+
+        @include respond-to(tab-port) {
+            font-size: 2.1rem;
+        }
+
+        @include respond-to(mobile-l) {
+            font-size: 2.7rem;
+        }
 
     }
 }
@@ -102,14 +360,34 @@
 // PARAGRAPHS
 .paragraph {
     &-primary {
-        font-size: 1.95rem; 
+        font-size: 1.95rem;
+        @include respond-to(laptop) {
+            font-size: 1.65rem;
+        }
+
+        @include respond-to(tab-port) {
+            font-size: 2rem;
+        }
+
+        @include respond-to(mobile-sm) {
+            font-size: 1.75rem;
+        }
     }
     &-secondary {
-
-    }
-    &-tertiary {
         font-size: 2rem;
         color: $color-neutral-3;
+
+        @include respond-to(tab-port) {
+            font-size: 1.6rem;
+        }
+
+        @include respond-to(mobile-l) {
+            font-size: 1.8rem;
+        }
+
+        @include respond-to(mobile-sm) {
+            font-size: 1.75rem;
+        }
     }
 }
 

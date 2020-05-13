@@ -1,5 +1,8 @@
+@include respond-to(mobile-l) {
+}
+
 .header {
-    padding: 4rem 2rem 6rem;
+    padding: 4rem $margin-side 6rem;
     background: 
         url("../images/bg-hero-desktop.svg"),
         $color-neutral-1;
@@ -8,13 +11,51 @@
         max-width: 130rem;
         margin: 0 auto;
     }
+    @include respond-to(mobile-l) {
+        padding: 4rem $margin-side-sm 6rem;
+    }
+    @include respond-to(mobile-sm) {
+        padding: 4rem $margin-side-xs 6rem;
+    }
 }
 
 
 .main {
-    padding: 8rem 2rem;
+    padding: 8rem $margin-side 0;
     &__container {
         max-width: 123rem;
         margin: 0 auto;
+    }
+
+    @include respond-to(mobile-l) {
+        padding: 8rem $margin-side-sm 0;
+    }
+    @include respond-to(mobile-sm) {
+        padding: 8rem $margin-side-xs 0;
+    }
+}
+
+
+.footer {
+    background-color: $color-neutral-2;
+    color: $color-neutral-1;
+    padding: 20rem $margin-side 5rem;
+
+    &__container {
+        max-width: 120rem;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @include respond-to(mobile-l) {
+        padding: 20rem $margin-side-sm 5rem;
+    }
+    @include respond-to(mobile-sm) {
+        padding: 20rem $margin-side-xs 5rem;
+    }
+
+    @include respond-to(mobile-sm) {
+        padding-top: 13rem;
     }
 }

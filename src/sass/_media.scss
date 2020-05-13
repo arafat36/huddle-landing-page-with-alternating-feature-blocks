@@ -1,0 +1,38 @@
+//////////////////////
+// MEDIA QUERIES
+
+@mixin respond-to($device-size) { 
+    @if ($device-size == laptop) {
+        @media only screen and (max-width: (1200 / 16) * 1em) {
+            @content;
+        } 
+    } 
+    @else if ($device-size == tab-land) {
+        @media only screen and (max-width: (950 / 16) * 1em) {
+            @content;
+        }
+    } 
+    @else if ($device-size == tab-port) {
+        @media only screen and (max-width: (760 / 16) * 1em) { 
+            @content;
+        }
+    } 
+    @else if ($device-size == mobile-l) {
+        @media only screen and (max-width: (550 / 16) * 1em) {
+            @content;
+        }
+    } 
+    @else if ($device-size == mobile-sm) {
+        @media only screen and (max-width: (330  / 16) * 1em) {
+            @content;
+        }
+    }
+}
+
+
+
+// @mixin media($breakpoint) {
+//     @media only screen and #{$breakpoint} {
+//         @content;
+//     }
+// }

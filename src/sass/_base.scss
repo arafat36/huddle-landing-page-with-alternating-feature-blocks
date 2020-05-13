@@ -1,6 +1,12 @@
 //////////////////////
 // VARIABLES
 
+//// MARGIN
+$margin-side: 6rem;
+$margin-side-sm: 3.5rem;
+$margin-side-xs: 2rem;
+
+
 //// COLORS
 $color-primary: #ff52bf; // - Pink
 
@@ -26,8 +32,19 @@ $font-family-body: 'Open Sans', sans-serif;  // weight: 400, 700
 }
 
 html {
-    font-size: 62.5%; // 1rem = 10px
     box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px
+
+    @include respond-to(laptop) {
+        font-size: 56.25%; // 1rem = 9px
+    }
+    
+    @include respond-to(tab-land) {
+        font-size: 50%; // 1rem = 8px
+    }
+    @include respond-to(mobile-sm) {
+        font-size: 43.75%; // 1rem = 7px
+    }
 }
 
 
@@ -40,11 +57,16 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     font-family: $font-family-body;
-    font-size: $font-size-body;
     color: $color-neutral-2;
+    font-size: 1.8rem;
+
+    @include respond-to(laptop) {
+        font-size: 1.6rem;
+    }
 }
 
 /////////////////////////////
 // UTILITIES
-.u-margin-bottom-sm {margin-bottom: 1rem};
-.u-margin-bottom-md {margin-bottom: 4rem};
+.u-margin-bottom-xs {margin-bottom: 1rem}
+.u-margin-bottom-sm {margin-bottom: 2rem}
+.u-margin-bottom-md {margin-bottom: 3rem}
