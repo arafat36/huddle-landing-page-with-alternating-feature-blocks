@@ -187,6 +187,7 @@
         }
 
         &-items {
+            list-style-type: none;
             display: flex;
             height: 10rem;
             flex-flow: column wrap;

@@ -166,6 +166,7 @@ body {
       .footer__nav {
         flex: 0 0 30rem; } }
     .footer__nav-items {
+      list-style-type: none;
       display: flex;
       height: 10rem;
       flex-flow: column wrap;
